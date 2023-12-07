@@ -22,17 +22,18 @@ with col1:
     
     with st.form("my_form_2"):
         address_ip = st.text_input("Adress IP", placeholder="127.0.0.0")
-        data_sources_path = st.text_area("Data source path", placeholder='/home/')
-        storage_systems = st.multiselect("Storage systems",['HDDs', 'SSDs', 'SAN', 'NAS'])
-        storage_system_model = st.text_input("Storage system model")
-        storage_system_size = st.number_input("Storage system size(GB)")
-        geographic_location = st.text_input("Geographic location", placeholder="loc.coords.latitude,loc.coords.longitude}")
-        processor_speed = st.multiselect("Processor type ",['CPU',"GPU"], default=["CPU"])
-        cores = st.number_input("Number of cores",min_value=1, value=8)
-        processor_speed = st.number_input("Processor speed(Hz)")
-        
+        data_sources_path = st.text_input("Data source path", placeholder='/home/')
+        storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
-        #Intended operations (array) 
+        storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")
+        storage_system_size = st.text_input("Storage system size(GB)",placeholder="500")
+        geographic_location = st.text_input("Geographic location", placeholder="Irelande,France")
+      
+        processor_type   = st.text_input("Processor type", placeholder="CPU, GPU")
+        cores = st.text_input("Number of cores",placeholder="8")
+        processor_speed = st.text_input("Processor speed(Hz)" , placeholder="3.2")
+         
+        operations_type = st.text_input("Operations" , placeholder="select,update, etc.")
 
         submitted = st.form_submit_button("Submit")
     
@@ -40,7 +41,30 @@ with col1:
 with col2:
     
     if submitted:
+
+
+        st.subheader("Output data")
+        st.json({
+                "dataset_identifier":"http://yourserver:8080/peb/view/myDialog.spd?dataset.uri=spsscr:///Datasets/SpecificURI.sav",
+                "stored_dataset_energy_consumption(kwh)":30,
+                "carbon_emissions(kg/kwh)":20,
+                "energy_intensity(w/b)":1.4,
+                "operations":[{
+                            "operation_type": "select",
+                              "operation_energy_consumption_(kwh)":1,
+                              "operation_carbon_emission_(kg/kwh)":3},
+                              {
+                            "operation_type": "update",
+                              "operation_energy_consumption_(kwh)":20,
+                              "operation_carbon_emission_(kg/kwh)":10}
+                              ],
+                "total_energy_consumption(kwh)":51 ,
+                "total_carbon_emission(kg/kwh)":33,
+                "profile_timestamp":"2023-01-01 12:00:00"
+                 })
+    
         st.subheader("Input data")
+   
         st.json({
                 "address_ip" : address_ip,
                 "data_sources_path":data_sources_path,
@@ -48,18 +72,12 @@ with col2:
                  "storage_system_model":storage_system_model,
                  "storage_system_size":storage_system_size,
                  "geographic_location":geographic_location,
-                 "processor_speed":processor_speed,
+                 "processor_type":processor_type,
                  "cores":cores,
                  "processor_speed":processor_speed
                  })
         
-        st.subheader("Output data")
-        st.json({"energy_consumption":"30",
-                 "energy_intensity_profile":"1.4",
-                 "carbon_emissions":20,
-                 "profile_timestamp":"2023-01-01 12:00:00"
-                 })
-    
+
 
 
 

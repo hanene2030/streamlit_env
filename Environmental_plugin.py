@@ -38,7 +38,7 @@ if __name__ =="__main__":
     st.set_page_config(
         page_title="Environmental plugin APIs",
         initial_sidebar_state='expanded',
-        layout="centered"
+        layout="wide"
     )
     check_login()
     
