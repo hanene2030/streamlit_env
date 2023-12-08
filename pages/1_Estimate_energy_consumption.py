@@ -22,7 +22,7 @@ with col1:
     
     with st.form("my_form_1"):
        
-        dataset_id = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
+        dataset_identifier = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
         storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")
@@ -56,7 +56,9 @@ with col2:
                 "profile_timestamp":"2023-01-01 12:00:00"
                  })
         st.subheader("Input data")
-        st.json({"storage_systems":storage_systems,
+        st.json({
+                 "dataset_identifier": dataset_identifier, 
+                 "storage_systems":storage_systems,
                  "storage_system_model":storage_system_model,
                  "storage_system_size":storage_system_size,
                  "geographic_location":geographic_location,

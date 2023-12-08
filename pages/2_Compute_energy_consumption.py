@@ -21,7 +21,7 @@ with col1:
     st.subheader("Endpoint")
     
     with st.form("my_form_2"):
-        dataset_id = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
+        dataset_identifier = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
         address_ip = st.text_input("Adress IP", placeholder="127.0.0.0")
         data_sources_path = st.text_input("Data source path", placeholder='/home/')
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
@@ -67,6 +67,7 @@ with col2:
         st.subheader("Input data")
    
         st.json({
+                "dataset_identifier": dataset_identifier, 
                 "address_ip" : address_ip,
                 "data_sources_path":data_sources_path,
                 "storage_systems":storage_systems,
@@ -75,7 +76,8 @@ with col2:
                  "geographic_location":geographic_location,
                  "processor_type":processor_type,
                  "cores":cores,
-                 "processor_speed":processor_speed
+                 "processor_speed":processor_speed,
+                 "operations_type": operations_type
                  })
         
 
