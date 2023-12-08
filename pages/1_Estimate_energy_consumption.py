@@ -25,15 +25,7 @@ with col1:
         dataset_id = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
-        storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")
-        storage_system_size = st.text_input("Storage system size(GB)",placeholder="500")
-        geographic_location = st.text_input("Geographic location", placeholder="Irelande,France")
-       
-        processor_type   = st.text_input("Processor type", placeholder="CPU, GPU")
-
-        cores = st.text_input("Number of cores",placeholder="8")
-        processor_speed = st.text_input("Processor speed(Hz)", placeholder="3.2")
-        
+ 
 
         #Intended operations (array) 
 
