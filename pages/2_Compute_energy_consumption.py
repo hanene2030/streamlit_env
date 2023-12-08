@@ -50,15 +50,7 @@ with col2:
                 "stored_dataset_energy_consumption(kwh)":30,
                 "carbon_emissions(kg/kwh)":20,
                 "energy_intensity(w/b)":1.4,
-                "operations":[{
-                            "operation_type": "select",
-                              "operation_energy_consumption_(kwh)":1,
-                              "operation_carbon_emission_(kg/kwh)":3},
-                              {
-                            "operation_type": "update",
-                              "operation_energy_consumption_(kwh)":20,
-                              "operation_carbon_emission_(kg/kwh)":10}
-                              ],
+            
                 "total_energy_consumption(kwh)":51 ,
                 "total_carbon_emission(kg/kwh)":33,
                 "profile_timestamp":"2023-01-01 12:00:00"
