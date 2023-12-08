@@ -23,7 +23,7 @@ with col1:
     with st.form("my_form_2"):
         dataset_identifier = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
         address_ip = st.text_input("Adress IP", placeholder="127.0.0.0")
-        data_sources_path = st.text_input("Data source path", placeholder='/home/')
+        data_sources_path = st.text_input("Data source path", placeholder='/hdd/path')
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
         storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")
