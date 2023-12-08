@@ -5,7 +5,7 @@ import streamlit as st
 def check_login():
     try:
         logged = st.session_state["logged_in"] 
-    except AttributeError :
+    except Exception :
         st.session_state['logged_in'] = False
         logged = False
     if not logged:
