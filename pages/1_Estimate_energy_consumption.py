@@ -22,8 +22,7 @@ with col1:
     
     with st.form("my_form_1"):
        
-        dataset_id = st.text_input("http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav",
-    )
+        dataset_id = st.text_input("Dataset identifier", placeholder="http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav")
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
         storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")

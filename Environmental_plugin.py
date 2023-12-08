@@ -70,7 +70,7 @@ if __name__ =="__main__":
     
     st.warning("""
         - Do we differentiate between the carbon emission when the dataset is stored into the storage 
-               system and the carbon emission during the dataset installation into the storage system?
+               system and the carbon emission during the dataset installation in the storage system?
                
             - I think installing the dataset is an operation :thinking_face:
             - Same question for the energy consumption.
@@ -81,7 +81,4 @@ if __name__ =="__main__":
           how can we do it in the case of the measuring tool? 
           In fact, if the provider download, install and execute the plugin himself.
           How will we get back the result from him? (needs to be defined)
-    
-
-
-    """)
+               """)
