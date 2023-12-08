@@ -5,19 +5,16 @@ import streamlit as st
 def check_login():
     try:
         logged = st.session_state["logged_in"] 
-    except:
+    except AttributeError :
         st.session_state['logged_in'] = False
         logged = False
     if not logged:
         st.stop()
-        
+
 
 st.header("Estimate your dataset energy consumption")
 
-check_login()
-    
-    
-    
+check_login() 
 col1,col2 = st.columns(2)
 
 with col1:
@@ -25,7 +22,8 @@ with col1:
     
     with st.form("my_form_1"):
        
-    
+        dataset_id = st.text_input("http://dn/db?dataset.uri=ns:///Datasets/SpecificURI.sav",
+    )
         storage_systems = st.text_input("Storage systems", placeholder="SSD, NAS, DAS, SAN, etc.")
 
         storage_system_model = st.text_input("Storage system model", placeholder="File storage, cloud Storage")
@@ -65,13 +63,4 @@ with col2:
                  "geographic_location":geographic_location,
                  "processor_type":processor_speed,
                  "cores":cores,
-                 "processor_speed":processor_speed
-                 })
-        
-
-    
-
-
-
-
-
+                 "processor_speed":processor_speed})

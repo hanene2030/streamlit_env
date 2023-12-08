@@ -68,7 +68,14 @@ if __name__ =="__main__":
     st.divider()
     #st.write("Author: Hanene")
     
+    st.warning("""
+        - Do we differentiate between the carbon emission when the dataset is stored into the storage 
+               system and the carbon emission during the dataset installation into the storage system?
+               
+            - I think installing the dataset is an operation :thinking_face:
+            - Same question for the energy consumption.
 
+               """)
     st.warning("""
         - Do we have to save the result of the env plugin? If yes,
           how can we do it in the case of the measuring tool? 
